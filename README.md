@@ -1,9 +1,9 @@
 # Alma User Data Transformer Python
 
 This repository was created to store three different types of data transformers.  There is one transformer for each file type:
-* .plif
-* .csv
-* .xml
+* .plif [link to file]
+* .csv [link to file]
+* .xml [link to file]
 
 The structure of the user XML (with sample values):
 
