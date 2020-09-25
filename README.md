@@ -1,63 +1,48 @@
 # Alma User Data Transformer Python
 
-This repository was created to store three different types of data transformers.  There is one transformer for each file type:
-* .plif [link to file]
-* .csv [link to file]
-* .xml [link to file]
+This repository was created to store python scripts that can transform patron data from external Student Information Systems into Alma-compliant XML so that it can be uploaded into Alma.  There is one transformer for each file type:
+* [.plif](https://github.com/Hypolymer/alma_user_data_transformers/blob/master/make_alma_user_xml_file_from_plif.py)
+* [.csv](https://github.com/Hypolymer/alma_user_data_transformers/blob/master/make_alma_user_xml_file_from_csv.py)
+* [.xml](https://github.com/Hypolymer/alma_user_data_transformers/blob/master/make_alma_user_xml_file_with_xml_editor.py)
 
-The structure of the user XML (with sample values):
+The files will need to be changed depending on your situation:
+
+In the [.plif](https://github.com/Hypolymer/alma_user_data_transformers/blob/master/make_alma_user_xml_file_from_plif.py) file:
+* Change the text values for the "patron_type_text" variables to their correct number/user-label pair from your Aleph.
+* In line 140, [```'<id_type desc="Power Campus ID">99</id_type>' + ```], you will probably have a different value for "desc"
+
+In the [.csv](https://github.com/Hypolymer/alma_user_data_transformers/blob/master/make_alma_user_xml_file_from_csv.py) file:
+* The .csv file that was used had headings in this order:
+  * Last Name
+  * First Name
+
+The minimal XML structure for the user (with sample values):
 
 ```
-  user_xml = ('<user>' +
-             '<record_type desc="Public">PUBLIC</record_type>' +
-             '<primary_id>' + str(line[1003:1018]).strip() + '</primary_id>' +            
-             '<first_name>' + firstname + '</first_name>' +
-             '<last_name>' + lastname + '</last_name>' +
-             '<full_name>' + str(line[1305:1354]).strip() + '</full_name>' +
-             '<user_group desc="' + patron_type_text + '">' + patron_type + '</user_group>' +                                                        
-             '<birth_date>' + the_birth_date +'</birth_date>' +                                   
-             '<expiry_date>' + the_expiry_date + '</expiry_date>' +
-             '<purge_date>' + the_expiry_date + '</purge_date>' +            
-             '<status desc="Active">ACTIVE</status>' +
+        	user_xml = ('<user>' +
+             '<primary_id>' + ''.join({row[5]}) + '</primary_id>' +            
+             '<first_name>' + ''.join({row[1]}) + '</first_name>' +
+             '<last_name>' + ''.join({row[0]}) + '</last_name>' +
+             '<user_group desc="' + patron_type_text + '">' + patron_type_number + '</user_group>' +
+             '<preferred_language>en</preferred_language>' +
+             '<expiry_date>' + expiry_date + '</expiry_date>' +                  
+             '<purge_date>' + purge_date + '</purge_date>' +
+             '<status desc="Active">ACTIVE</status>' +         
              '<contact_info>' +
-             '<addresses>' +
-             '<address preferred="true" segment_type="Internal">' +
-             '<line1>' + str(line[1354:1404]).strip() + '</line1>' +
-             '<line2>' + str(line[1504:1554]).strip() + '</line2>' +
-             '<postal_code>' + str(line[1554:1563]).strip() + '</postal_code>' +
-             '<country desc=""></country>' +
-             '<address_note>User Address Type: Permanent address</address_note>' +
-             '<address_types><address_type desc="Home">home</address_type>' +
-             '</address_types>' +
-             '</address>' +
-             '</addresses>' +
              '<emails>' +
-             '<email preferred="true" segment_type="Internal">' +
-             '<email_address>' + str(line[1684:1744]).strip() + '</email_address>' +
+             '<email preferred="true">' +
+             '<email_address>' + ''.join({row[6]}) + '</email_address>' +
              '<email_types>' +
-             '<email_type desc="Personal">personal</email_type>' +
+             '<email_type desc="School">school</email_type>' +
              '</email_types>' +
              '</email>' +
              '</emails>' +
-             '<phones>' +
-             '<phone preferred="true" preferred_sms="false" segment_type="Internal">' +
-             '<phone_number>' + str(line[1564:1594]).strip() + '</phone_number>' +
-             '<phone_types>' +
-             '<phone_type desc="Home">home</phone_type>' +
-             '</phone_types>' +
-             '</phone>' +
-             '</phones>' +
+             '<phones/>' +
              '</contact_info>' +
              '<user_identifiers>' +
              '<user_identifier>' +
-             '<id_type desc="Power Campus ID">99</id_type>' + 
-             '<value>' + str(line[3:23]).strip() + '</value>' +
-             '<status>ACTIVE</status>' +
-             '</user_identifier>' +
-             '<user_identifier segment_type="External">' +
-             '<id_type desc="WEB Access">02</id_type>' +            
-             '<value>' + str(line[1684:1744]).strip() + '</value>' +           
-             '<status>ACTIVE</status>' +
+             '<id_type desc="Additional">02</id_type>' + 
+             '<value>' + ''.join({row[7]}) + '</value>' +
              '</user_identifier>' +
              '</user_identifiers>' +
              '</user>')
