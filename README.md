@@ -7,6 +7,10 @@ There is one Python script to transform each file type:
 * [.csv](https://github.com/Hypolymer/alma_user_data_transformers/blob/master/make_alma_user_xml_file_from_csv.py)
 * [.xml](https://github.com/Hypolymer/alma_user_data_transformers/blob/master/make_alma_user_xml_file_with_xml_editor.py)
 
+Instructions for running the Python scripts:
+* [Mac](https://github.com/Hypolymer/alma_user_data_transformers/blob/master/Mac%20-%20How%20to%20run%20SIS%20Python%20Scripts.pdf)
+* [Windows](https://github.com/Hypolymer/alma_user_data_transformers/blob/master/Windows%20-%20How%20to%20run%20SIS%20Python%20Scripts.pdf)
+
 The Python scripts will need to be changed depending on your situation:
 
 In the [.plif](https://github.com/Hypolymer/alma_user_data_transformers/blob/master/make_alma_user_xml_file_from_plif.py) file:
