@@ -14,7 +14,7 @@ Instructions for running the Python scripts:
 The Python scripts will need to be changed depending on your situation:
 
 In the [.plif](https://github.com/Hypolymer/alma_user_data_transformers/blob/master/make_alma_user_xml_file_from_plif.py) file:
-* Change the text values for the "patron_type_text" variables to their correct number/user-label pair from your Aleph.
+* Change the text values for the "patron_type_text" variables to their correct number/user-label pair from your Aleph user type table.
 * In line 140, [```'<id_type desc="Power Campus ID">99</id_type>' + ```], you will probably have a different value for "desc" other than "Power Campus ID"
 
 In the [.csv](https://github.com/Hypolymer/alma_user_data_transformers/blob/master/make_alma_user_xml_file_from_csv.py) file:
@@ -22,7 +22,7 @@ In the [.csv](https://github.com/Hypolymer/alma_user_data_transformers/blob/mast
   * Last Name
   * First Name
 
-The minimal XML structure for the user (with sample values):
+The minimal XML structure for the user (with sample values from a .csv file):
 
 ```
         	user_xml = ('<user>' +
