@@ -1,6 +1,8 @@
 # Alma User Data Transformer Python
 
-This repository was created to store python scripts that can transform patron data from external Student Information Systems into Alma-compliant XML so that it can be uploaded into Alma.  There is one transformer for each file type:
+This repository was created to store Python scripts that can transform patron data from external Student Information Systems into Alma-compliant XML so that it can be uploaded into Alma.  These scripts are here to help libraries and serve as a template that will need to be slightly modified in order to fit the external patron data.  The Python scripts have **No Warranty** and are licensed Creative Commons BY-NC-SA.
+
+There is one transformer for each file type:
 * [.plif](https://github.com/Hypolymer/alma_user_data_transformers/blob/master/make_alma_user_xml_file_from_plif.py)
 * [.csv](https://github.com/Hypolymer/alma_user_data_transformers/blob/master/make_alma_user_xml_file_from_csv.py)
 * [.xml](https://github.com/Hypolymer/alma_user_data_transformers/blob/master/make_alma_user_xml_file_with_xml_editor.py)
