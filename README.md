@@ -1,4 +1,4 @@
-# Alma Patron Data Transformers
+# Alma User Data Transformers
 
 This repository was created to store scripts that can transform patron data from external Student Information Systems into Alma-compliant XML so that it can be uploaded into Alma.  These scripts were written to help a few SUNY Libraries during their migration from Aleph to Alma, and are here to help libraries by serving as templates that need to be slightly modified in order to fit the external patron data.  The scripts have **No Warranty** and are licensed Creative Commons BY-NC-SA.
 
