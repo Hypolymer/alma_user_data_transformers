@@ -1,6 +1,6 @@
 # Alma User Data Transformers
 
-This repository was created to store scripts that can transform patron data from external Student Information Systems into Alma-compliant XML so that it can be uploaded into Alma.  These scripts were written to help SUNY Libraries during their migration, and are here to help libraries by serving as templates that need to be slightly modified in order to fit the external patron data.  The scripts have **No Warranty** and are licensed Creative Commons BY-NC-SA.
+This repository was created to store scripts that can transform patron data from external Student Information Systems into Alma-compliant XML so that it can be uploaded into Alma.  These scripts were written to help a few SUNY Libraries during their migration from Aleph to Alma, and are here to help libraries by serving as templates that need to be slightly modified in order to fit the external patron data.  The scripts have **No Warranty** and are licensed Creative Commons BY-NC-SA.
 
 There is one Python script to transform each file type:
 * [.plif](https://github.com/Hypolymer/alma_user_data_transformers/blob/master/make_alma_user_xml_file_from_plif.py)
