@@ -19,8 +19,14 @@ In the [.plif](https://github.com/Hypolymer/alma_user_data_transformers/blob/mas
 
 In the [.csv](https://github.com/Hypolymer/alma_user_data_transformers/blob/master/make_alma_user_xml_file_from_csv.py) file:
 * The .csv file that was used had headings in this order:
-  * Last Name
-  * First Name
+  * LastName
+  * FirstName
+  * User Group
+  * Expiration Date
+  * Purge Date
+  * Primary Identifier
+  * Email_Address
+  * Additional Identifier
 
 The minimal XML structure for the user (with sample values from a .csv file):
 
