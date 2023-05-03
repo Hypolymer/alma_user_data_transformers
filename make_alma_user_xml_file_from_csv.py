@@ -19,10 +19,6 @@ import csv
 import zipfile
 from datetime import datetime
 today = datetime.today().strftime('%Y%m%d' + '_' + '%H%M%S')
-#This century variable gets the first two digits of the year to append to the purge date and expiry date
-#https://stackoverflow.com/questions/11714859/how-to-display-the-first-few-characters-of-a-string-in-python
-#century = datetime.today().strftime('%Y')
-#century = century[:2]
 
 
 # These are the variables you type with the command:  python make_alma_user_xml_file_from_csv.py patron_file.csv
