@@ -65,7 +65,7 @@ with open(input_path,'rU') as csv_file:
         		expiry_date = expiry_year + "-" + expiry_month + "-" + expiry_day + "Z"
        #Next, build the purge date.  The date doesn't come formatted how Alma wants it.  Build it.
         	if ''.join({row[4]}) != "":
-        		str_list = ''.join({row[3]}).split('/')
+        		str_list = ''.join({row[4]}).split('/')
         		purge_month = str_list[0]
         		purge_day = str_list[1]
         		purge_year = str_list[2]
